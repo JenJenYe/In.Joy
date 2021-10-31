@@ -1,0 +1,355 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+	line-height: 1;
+    font-family: "Poppins", sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.main-header{
+    display: flex;
+    /* background-color: #888; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 10px;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+  }
+  .logo img{
+    vertical-align: middle;
+    width: 140px;
+  }
+  .logo img{
+    vertical-align: middle;
+  }
+  #menu-control{
+    display: none;
+  }
+  .navbar{
+    /* margin-top: 0;
+    margin-right: 0;*/
+    padding-right: 50px; 
+  }
+  
+  .navbar ul li{
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: wheat;
+    margin: 10px 15px 10px 20px;
+  }   
+  .navbar ul li a{
+    color: #6179B5;
+  }
+    .navbar ul li a:hover{
+    color: aquamarine;
+    text-decoration: none;
+  }
+  
+  /*=========================================*/
+  
+  @media screen and (max-width: 1024px){
+    
+    .hb{
+        width: 40px;
+        height: 40px;
+        position: relative;
+        padding-right: 50px;
+    }
+    .hb span{
+        width: 32px;
+        height: 2px;
+        background-color: #6179B5;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+        transition: top     .5s .2s, 
+                    bottom  .5s .2s, 
+                    opacity .5s, 
+                    transform .2s;
+    }
+    .hb span:first-child{
+        transform: rotate(0deg);
+        top: 10px;
+    }
+    .hb span:last-child{
+        transform: rotate(0deg);
+        bottom: 10px;
+    }
+    .hb span:nth-child(2){
+        top: 0;
+        bottom: 0;
+    }
+    #menu-control:checked ~ .main-header .hb span:first-child{
+        top: 19px;
+        transform: rotate(225deg);
+        transition: top     .5s, 
+                    bottom  .5s, 
+                    opacity .5s, 
+                    transform .2s .5s;
+    }
+    #menu-control:checked ~ .main-header .hb span:last-child{
+        bottom: 19px;
+        transform: rotate(-225deg);
+        transition: top     .5s, 
+                    bottom  .5s, 
+                    opacity .5s, 
+                    transform .2s .5s;
+    }
+    .hb span:nth-child(2){
+        opacity: 1;
+    }
+    #menu-control:checked ~ .main-header .hb span:nth-child(2){
+        opacity: 0;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -80%;
+        width: 80%;
+        height: calc(100vh - 50px);
+        transition: left 1s;
+        background-color: black;
+        opacity: .6;
+    }
+    .navbar a{
+        display: block;
+        text-decoration: none;
+        color: #6179B5;
+    }
+    .navbar ul li{
+        font-size: 12px;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: wheat;
+        margin: 10px 15px 10px 20px;
+    }
+    #menu-control:checked ~ .main-header .navbar{
+        left: 0;
+    }
+  }
+  
+  /*=========================================*/
+  
+  @media screen and (min-width: 1025px){
+    .hb{
+        display: none;
+    }
+    .navbar ul li a{
+        text-decoration: none;
+        color: #6179B5;
+    }
+    .navbar ul li{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #6179B5;
+    margin: 10px 15px 10px 20px;
+    }
+  }
+.dec{
+    width: 150px;
+    position: absolute;
+    margin:auto;
+    right: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 30%;
+}
+.culture_content{
+    display: flex;
+    height: 100vh;
+    background: url(https://www.sliderrevolution.com/wp-content/uploads/revslider/visual-art-forms/pattern2.jpg) center center repeat rgb(12, 12, 12);
+}  
+.container{
+    margin:auto;
+    padding-top: 120px;
+}
+.item{
+    position: relative;
+}
+.pic{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    position: relative;
+}
+.pic::before{
+    content: 'Culture & Festival';
+    font-size: 50px;
+    line-height: 30px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+    top: 43%;
+    left: -41%;
+    color: white;
+    /* opacity:0.9; */
+}
+.culture_content img{
+    width: 100%;  
+}
+span{
+    font-size: 12px;
+}
+.order{
+    font-size: 14px;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 120px;
+}
+.intro{
+    width: 50%;
+    padding: 15px;
+    background-color: #6179B5;
+    position: absolute;
+    right: -30%;
+    bottom: 10%;
+    color: #fff;
+}
+h6{
+    margin-bottom: 10px;
+    font-size: 16px;
+    opacity:0.9;  
+}
+p{
+    font-size: 14px;
+    opacity:0.8;
+}
+.subnav{
+    margin: 20px;
+}
+.subnav ul{
+    width: 22.3333%;
+    /* display: flex;
+    justify-content: space-evenly;
+    align-items: center;   */
+    margin: auto;  
+}
+.subnav li{
+    font-size: 14px;
+    color: #000; 
+    padding: 2px;
+}
+.subnav li a:hover{
+    color: #A9B7C0;
+}
+
+
+@media screen and (max-width:1024px){
+
+    .pic{
+        width: 90%;
+        position: relative;
+    }
+    .dec{
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: 15px;
+    }
+    .order{
+        margin-top: 0;
+        margin: 0;
+    }
+    .pic::before{
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-bottom: 30px;
+        display: block;
+        line-height: 52px;
+    }
+    .intro{
+        width: 80%;
+        right: 0;
+    }
+    .subnav{
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        margin: 20px auto;
+    }
+    li{
+        padding: 10px;
+    }
+    .subnav li a{
+        display: none;
+    }
+    .culture_content{
+        height: 80vh;
+    }
+}
+@media screen and (max-width:768px){
+    .intro{
+        width: 100%;
+        right: 0;
+        position: relative;
+        
+        background: transparent;
+        color: #545454;
+    }
+}
+footer{
+    background: url(https://www.sliderrevolution.com/wp-content/uploads/revslider/visual-art-forms/pattern2.jpg) center center repeat rgb(12, 12, 12);
+}
+.footer_text{
+    background: url(https://www.sliderrevolution.com/wp-content/uploads/revslider/visual-art-forms/pattern2.jpg) center center repeat rgb(12, 12, 12);
+}
+
+footer.culture-footer {
+    margin-top: 0 !important;
+    padding-top: 50px;
+}

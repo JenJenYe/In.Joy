@@ -1,0 +1,399 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.main_title h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 30px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    padding-top: 40px;
+    color: white;
+    -webkit-text-stroke: 0.3vw white;
+
+}
+.main_title h4{
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.5em;
+    margin: 8px;
+    padding: 8px;
+    color: white;
+}
+.main_title h6{
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.swiper {
+  width: 100%;
+  /* height: 100%; */
+  height: 500px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  /* height: 100%; */
+  height: 500px;
+  object-fit: cover;
+}
+.main_title{
+    font-size: 36px;
+    position: absolute;
+    margin-top: -100px;
+}
+.main-header{
+    display: flex;
+    /* background-color: #888; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 10px;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+}
+.logo img{
+    vertical-align: middle;
+    width: 140px;
+}
+.logo img{
+    vertical-align: middle;
+}
+#menu-control{
+    display: none;
+}
+.navbar{
+    /* margin-top: 0;
+    margin-right: 0;*/
+    padding-right: 50px; 
+}
+
+    .navbar ul li{
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: wheat;
+    margin: 10px 15px 10px 20px;
+}   
+.navbar ul li a{
+    color: wheat;
+}
+    .navbar ul li a:hover{
+    color: aquamarine;
+    text-decoration: none;
+}
+
+/*=========================================*/
+
+@media screen and (max-width: 1024px){
+    .hb{
+        width: 40px;
+        height: 40px;
+        position: relative;
+        padding-right: 50px;
+    }
+    .hb span{
+        width: 32px;
+        height: 2px;
+        background-color: wheat;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+        transition: top     .5s .2s, 
+                    bottom  .5s .2s, 
+                    opacity .5s, 
+                    transform .2s;
+    }
+    .hb span:first-child{
+        transform: rotate(0deg);
+        top: 10px;
+    }
+    .hb span:last-child{
+        transform: rotate(0deg);
+        bottom: 10px;
+    }
+    .hb span:nth-child(2){
+        top: 0;
+        bottom: 0;
+    }
+    #menu-control:checked ~ .main-header .hb span:first-child{
+        top: 19px;
+        transform: rotate(225deg);
+        transition: top     .5s, 
+                    bottom  .5s, 
+                    opacity .5s, 
+                    transform .2s .5s;
+    }
+    #menu-control:checked ~ .main-header .hb span:last-child{
+        bottom: 19px;
+        transform: rotate(-225deg);
+        transition: top     .5s, 
+                    bottom  .5s, 
+                    opacity .5s, 
+                    transform .2s .5s;
+    }
+    .hb span:nth-child(2){
+        opacity: 1;
+    }
+    #menu-control:checked ~ .main-header .hb span:nth-child(2){
+        opacity: 0;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -79%;
+        width: 80%;
+        height: calc(100vh - 50px);
+        transition: left 1s;
+    }
+    .navbar a{
+        display: block;
+        text-decoration: none;
+        color: wheat;
+    }
+    .navbar ul li{
+        font-size: 12px;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: wheat;
+        margin: 10px 15px 10px 20px;
+    }
+    #menu-control:checked ~ .main-header .navbar{
+        left: 0;
+    }
+}
+
+/*=========================================*/
+
+@media screen and (min-width: 1025px){
+    .hb{
+        display: none;
+    }
+    .navbar ul li a{
+        text-decoration: none;
+        color: wheat;
+        /* color: #6179B5; */
+    }
+    .navbar ul li{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    margin: 10px 15px 10px 20px;
+    }
+}
+
+/* ========================================== */
+
+.section_gap {
+    padding: 120px 0;
+}
+.title{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+.title h2{
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 600;    
+}
+.title p{
+    font-size: 14px;
+    line-height: 30px;
+    color: #777777;
+    margin-bottom: 40px;
+}
+.travel_container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 330px;
+}
+.traveler{
+  overflow: hidden;
+  position: relative;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 10px;   
+    width: 100%;
+    height: auto;
+}
+.traveler img{
+
+    vertical-align: middle;
+    overflow: hidden;
+    transition: all 0.4s linear;
+    border-radius: 20px;
+    /* transition: all 1s ease-out; */
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.traveler img:hover{
+    /* transform:scale(1,1); */
+    /* transform:scale(1.2,1.2); */
+    transform: scale(1.2);
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.traveler a{
+    text-decoration: none;
+}
+.traveler h4{
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 38px;
+    font-weight: 600;
+    color: #222222;
+    margin: 20px;
+    text-align: center;
+}
+.about_area .container{
+    display: flex;
+}
+.about_area .about_text{
+  width:100%; 
+  margin: auto;
+} 
+.about_area .about_img{
+  width:100%;
+}
+.about_area h2{
+    font-family: "Poppins", sans-serif;
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 600;   
+}
+.about_area p{
+    font-family: "Poppins", sans-serif; 
+    color: #777777;
+    line-height: 30px;
+    margin-top: 30px; 
+}
+.about_area a{
+    text-decoration: none;
+    color: #4f4f50;
+}
+.about_area .about_img{
+    height: auto;
+    vertical-align: center;
+}
+.about_area .about_img img{
+  width:100%;
+  height: auto;
+}
+.blog_content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.title a{
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 38px;
+    font-weight: 600;
+    color: #222222;
+    margin: 10px;
+}
+.post{
+  width: 33.333333%;
+  text-align: center;
+  -webkit-transition: all 0.7s linear;
+    -o-transition: all 0.7s linear;
+    transition: all 0.7s linear;
+}
+.post img{
+    width: 90%;
+    height: 300px;  
+}
+ 
+.title h6{
+    margin-top: -20px;
+}
+ 
+.title h6{
+    margin-top: -20px;
+}
